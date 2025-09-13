@@ -13,9 +13,8 @@ const {
 } = require("./middlewares/common/errorHandler");
 
 const authRouter = require("./router/authRouter");
-const userRouter = require("./router/userRouter");
-const bookRouter = require("./router/bookRouter");
-const forumRouter = require("./router/forumRouter");
+const roomRouter = require("./router/roomRouter");
+const bookingRouter = require("./router/bookingRouter");
 
 const app = express();
 dotenv.config();
@@ -32,6 +31,8 @@ app.use(
       "http://localhost:5173",
       "https://simplified-nb.vercel.app",
       "https://simplified-nb-rorshachs-projects-9fee91c2.vercel.app",
+      "https://hotel-management-frontend-fawn.vercel.app",
+      "https://hotel-management-frontend-git-main-rorshachs-projects-9fee91c2.vercel.app",
     ],
   })
 );
@@ -48,12 +49,11 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routing setup
 app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter);
-app.use("/api/book", bookRouter);
-app.use("/api/forum", forumRouter);
+app.use("/api/rooms", roomRouter);
+app.use("/api/bookings", bookingRouter);
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Hello From Bookies!" });
+  res.status(200).json({ message: "Hello From HMB" });
 });
 
 // 404 not found handler
