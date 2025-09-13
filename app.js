@@ -28,9 +28,6 @@ mongoose
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://simplified-nb.vercel.app",
-      "https://simplified-nb-rorshachs-projects-9fee91c2.vercel.app",
       "https://hotel-management-frontend-fawn.vercel.app",
       "https://hotel-management-frontend-git-main-rorshachs-projects-9fee91c2.vercel.app",
     ],
